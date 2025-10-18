@@ -11,6 +11,31 @@ from shared.tsp.functions import make_random_positions, make_grid_positions
 from shared.tsp.generator import export_tsp_graph
 from shared.results import append_results
 
+USE_CLI_OVERRIDES = False  # Pon a True en Colab si quieres pasar parámetros por CLI (num_ants=..., etc.)
+
+def _parse_cli_overrides(argv):
+    allowed = {"num_ants", "max_epochs", "alpha", "beta", "rho", "q", "seed"}
+    out = {}
+    for tok in argv:
+        tok = tok.strip().rstrip(',')
+        if '=' not in tok:
+            continue
+        k, v = tok.split('=', 1)
+        k = k.strip()
+        v = v.strip()
+        if k not in allowed:
+            continue
+        # try int, then float, else keep string
+        try:
+            out[k] = int(v)
+            continue
+        except ValueError:
+            try:
+                out[k] = float(v)
+                continue
+            except ValueError:
+                out[k] = v
+    return out
 
 def run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], num_ants: int, max_epochs: int, alpha: float = 1.0, beta: float = 5.0, rho: float = 0.5, q: float = 1.0, seed: int = 3) -> None:
     aco = AntSystem(
@@ -49,9 +74,32 @@ def run_tsp():
     # positions_grid = make_grid_positions(n, spacing=10)
     # run_tsp_for_positions(f"grid_{n}", positions_grid, num_ants=110, max_epochs=40, alpha=2, beta=5, rho=0.3, q=1.0, seed=n)
 
-    n=225
+    n = 225
     positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    run_tsp_for_positions(f"random_{n}", positions_rand, num_ants=500, max_epochs=80, alpha=3, beta=6, rho=0.2, q=1.0, seed=n)
+    # Valores por defecto para este escenario
+    params = {
+        "num_ants": 500,
+        "max_epochs": 80,
+        "alpha": 1.0,
+        "beta": 6.0,
+        "rho": 0.2,
+        "q": 1.0,
+        "seed": n,
+    }
+    if USE_CLI_OVERRIDES:
+        overrides = _parse_cli_overrides(sys.argv[1:])
+        params.update({k: overrides[k] for k in overrides})
+    run_tsp_for_positions(
+        f"random_{n}",
+        positions_rand,
+        num_ants=int(params["num_ants"]),
+        max_epochs=int(params["max_epochs"]),
+        alpha=float(params["alpha"]),
+        beta=float(params["beta"]),
+        rho=float(params["rho"]),
+        q=float(params["q"]),
+        seed=int(params["seed"]),
+    )
 
     # positions_grid = make_grid_positions(n, spacing=10)
     # run_tsp_for_positions(f"grid_{n}", positions_grid, num_ants=50, max_epochs=10, alpha=1.0, beta=5.0, rho=0.5, q=1.0, seed=n)
