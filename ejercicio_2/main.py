@@ -6,7 +6,7 @@ if str(_PARENT_DIR) not in sys.path:
     sys.path.insert(0, str(_PARENT_DIR))
 from typing import Sequence
 from pso.functions import beale, easom, rastrigin
-from pso import ParticleSwarm
+from pso.core import ParticleSwarm
 from shared.results import append_results, compute_summary, format_summary_block
 from shared.utils import fmt_vec
 
