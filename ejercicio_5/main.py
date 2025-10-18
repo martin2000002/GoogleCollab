@@ -26,7 +26,7 @@ from ejercicio_2.pso import ParticleSwarm
 from ejercicio_2.pso.functions import beale as pso_beale, rastrigin
 
 # ACO-AS (Ejercicio 3)
-from ejercicio_3.aco import AntSystem
+from ejercicio_3.aco_c import AntSystem
 
 # Adapted versions (this exercise)
 from pure_adapted.pso_tsp import SwapSequencePSO

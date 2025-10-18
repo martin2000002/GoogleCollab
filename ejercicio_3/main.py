@@ -5,7 +5,7 @@ _PARENT_DIR = Path(__file__).resolve().parent.parent
 if str(_PARENT_DIR) not in sys.path:
     sys.path.insert(0, str(_PARENT_DIR))
 from typing import List, Tuple
-from aco.core import AntSystem
+from aco_c.core import AntSystem
 from shared.tsp.functions import make_random_positions, make_grid_positions
 from shared.tsp.generator import export_tsp_graph
 from shared.results import append_results, compute_summary, format_summary_block
