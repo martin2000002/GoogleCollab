@@ -1,0 +1,153 @@
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 860.311164008159 | time=16.72s
+ACO TSP [grid_100] best length= 1115.114679174552 | time=9.38s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 385.869106324597 | time=1.51s
+ACO TSP [grid_25] best length= 254.142135623731 | time=2.52s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 389.137929532406 | time=1.93s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 395.741351581026 | time=1.82s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 389.646917568688 | time=1.45s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 390.302914304496 | time=2.06s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 391.223050098727 | time=1.86s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 395.934516393251 | time=1.57s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 413.226965703169 | time=1.60s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 388.502032178519 | time=1.59s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 392.639105546390 | time=2.19s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 390.064023230785 | time=1.60s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 385.869106324597 | time=1.65s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 386.789242118828 | time=2.00s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 385.869106324597 | time=10.68s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 385.869106324597 | time=1.58s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 385.869106324597 | time=1.54s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 390.302914304496 | time=2.01s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 385.869106324597 | time=1.57s
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 385.869106324597 | time=1.13s
+== ACO-AS on TSP ==
+ACO TSP [grid_25] best length= 254.142135623731 | time=1.49s
+== ACO-AS on TSP ==
+ACO TSP [grid_25] best length= 254.142135623731 | time=1.54s
+== ACO-AS on TSP ==
+ACO TSP [grid_25] best length= 254.142135623731 | time=0.72s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 850.136545598697 | time=11.38s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 826.965810923754 | time=65.98s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 816.109455306398 | time=65.04s
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 805.059879114949 | time=54.27s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 816.959929135064 | time=51.76s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 815.456765943555 | time=50.00s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 832.384568856591 | time=48.83s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 850.768837580769 | time=49.25s
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 819.101486637903 | time=79.50s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 813.513718769146 | time=49.95s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 849.206796955146 | time=49.51s
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 831.544413103621 | time=47.58s
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 805.856359214879 | time=85.31s
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 824.230932745499 | time=90.51s
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 827.595638664009 | time=81.02s
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 805.856359214879 | time=87.18s
+== ACO-AS on TSP ==
+ACO TSP [grid_100] best length= 1022.426406871193 | time=7.68s
+== ACO-AS on TSP ==
+ACO TSP [grid_100] best length= 1022.426406871193 | time=16.00s
+== ACO-AS on TSP ==
+ACO TSP [grid_100] best length= 1048.929222269922 | time=7.90s
+== ACO-AS on TSP ==
+ACO TSP [grid_100] best length= 1012.360679774998 | time=15.68s
+== ACO-AS on TSP ==
+ACO TSP [grid_100] best length= 1000.000000000000 | time=17.89s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 827.426578970247 | time=31.70s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 805.460259820704 | time=32.05s
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 805.460259820704 | time=55.09s
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+== ACO-AS on TSP ==
+ACO TSP [random_100] best length= 805.856359214879 | time=29.13s
+== ACO-AS on TSP ==
+ACO TSP [random_225] best length= 1257.835614716171 | time=653.12s
+== ACO-AS on TSP ==
+ACO TSP [random_225] best length= 1257.835614716171 | time=741.12s
+== ACO-AS on TSP ==
+ACO TSP [random_225] best length= 1431.943201957639 | time=3.51s
+== ACO-AS on TSP ==
+ACO TSP [random_225] best length= 1431.943201957639 | time=3.66s
+== ACO-AS on TSP ==
+<<<<<<< HEAD
+=======
+ACO TSP [random_225] best length= 1243.520955437039 | time=523.53s
+>>>>>>> d9d2ae1568fafa22d8099dc0976168aca7d225dc
