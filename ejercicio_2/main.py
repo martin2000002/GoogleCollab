@@ -20,7 +20,7 @@ def run_beale():
         lower_bounds=lb,
         upper_bounds=ub,
         swarm_size=60,
-        max_epochs=300,
+        max_epochs=150,
         alpha1=1.0,
         alpha2=1.0,
         inertia=1.0,
@@ -45,7 +45,7 @@ def run_easom():
         lower_bounds=lb,
         upper_bounds=ub,
         swarm_size=50,
-        max_epochs=300,
+        max_epochs=150,
         alpha1=1.0,
         alpha2=1.0,
         inertia=1.0,
@@ -94,4 +94,4 @@ if __name__ == "__main__":
     append_results('ejercicio_2', header)
     run_beale()
     run_easom()
-    run_rastrigin_n10()
+    # run_rastrigin_n10()
