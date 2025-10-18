@@ -8,9 +8,7 @@ from typing import Sequence
 from pso.functions import beale, easom, rastrigin
 from pso import ParticleSwarm
 from shared.results import append_results, compute_summary, format_summary_block
-
-def _fmt_vec(x: Sequence[float]) -> str:
-    return '[' + ', '.join(f"{float(v):.6f}" for v in x) + ']'
+from shared.utils import fmt_vec
 
 def run_beale():
     lb = [-4.5, -4.5]
@@ -19,11 +17,11 @@ def run_beale():
         func=beale,
         lower_bounds=lb,
         upper_bounds=ub,
-        swarm_size=60,
-        max_epochs=150,
-        alpha1=1.0,
-        alpha2=1.0,
-        inertia=1.0,
+        swarm_size=100,
+        max_epochs=50,
+        alpha1=1,
+        alpha2=0.5,
+        inertia=0.5,
         maximize=False,
         random_seed=1,
         log=True,
@@ -32,7 +30,7 @@ def run_beale():
     )
     best_overall, results = pso.run_multiple(runs=10)
     best_x, best_f, best_f_str, _hist, _seed, run_time = best_overall
-    line = f"Beale best f(x,y)={best_f_str} at {_fmt_vec(best_x)} | time={run_time:.2f}s"
+    line = f"Beale best f(x,y)={best_f_str} at {fmt_vec(best_x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_2', line)
     # Summary block
@@ -50,11 +48,11 @@ def run_easom():
         func=easom,
         lower_bounds=lb,
         upper_bounds=ub,
-        swarm_size=50,
-        max_epochs=150,
-        alpha1=1.0,
-        alpha2=1.0,
-        inertia=1.0,
+        swarm_size=100,
+        max_epochs=50,
+        alpha1=1,
+        alpha2=0.5,
+        inertia=0.5,
         maximize=False,
         random_seed=2,
         log=True,
@@ -63,7 +61,7 @@ def run_easom():
     )
     best_overall, results = pso.run_multiple(runs=10)
     best_x, best_f, best_f_str, _hist, _seed, run_time = best_overall
-    line = f"Easom best f(x,y)={best_f_str} at {_fmt_vec(best_x)} | time={run_time:.2f}s"
+    line = f"Easom best f(x,y)={best_f_str} at {fmt_vec(best_x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_2', line)
     vals = [r[1] for r in results]
@@ -94,7 +92,7 @@ def run_rastrigin_n10():
     )
     best_overall, results = pso.run_multiple(runs=10)
     best_x, best_f, best_f_str, _hist, _seed, run_time = best_overall
-    line = f"Rastrigin(n=10) best f(x)={best_f_str} at {_fmt_vec(best_x)} | time={run_time:.2f}s"
+    line = f"Rastrigin(n=10) best f(x)={best_f_str} at {fmt_vec(best_x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_2', line)
     vals = [r[1] for r in results]
@@ -110,4 +108,4 @@ if __name__ == "__main__":
     append_results('ejercicio_2', header)
     run_beale()
     run_easom()
-    # run_rastrigin_n10()
+    run_rastrigin_n10()

@@ -12,6 +12,7 @@ from problems.tsp import TSPProblem
 from shared.tsp.functions import make_grid_positions, make_random_positions
 from shared.tsp.generator import export_tsp_graph
 from shared.results import append_results, compute_summary, format_summary_block
+from shared.utils import fmt_vec
 
 def run_beale():
     bits = 16
@@ -28,17 +29,18 @@ def run_beale():
         population_size=80,
         mutation_prob=0.2,
         elite_ratio=0.20,
-        max_generations=200,
+        max_generations=175,
         selection=TournamentSelection(k=3),
         maximize=False,
         random_seed=1,
         log=True,
+        show_progress=True,
         dir_name="beale",
     )
     best_overall, results = ga.run_multiple(runs=10)
     best_ind, best_fit, best_fit_str, _, _seed, run_time = best_overall
     x = problem._decode(best_ind)
-    line = f"Beale best f(x,y)= {best_fit_str} at {tuple(round(v, 6) for v in x)} | time={run_time:.2f}s"
+    line = f"Beale best f(x,y)= {best_fit_str} at {fmt_vec(x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_1', line)
     vals = [r[1] for r in results]
@@ -59,11 +61,11 @@ def run_easom():
 
     ga = GeneticAlgorithm(
         problem=problem,
-        population_size=80,
-        mutation_prob=0.1,
-        elite_ratio=0.20,
-        max_generations=200,
-        selection=TournamentSelection(k=3),
+        population_size=100,
+        mutation_prob=0.2,
+        elite_ratio=0.25,
+        max_generations=40,
+        selection=TournamentSelection(k=2),
         maximize=False,
         random_seed=2,
         log=True,
@@ -73,7 +75,7 @@ def run_easom():
     best_overall, results = ga.run_multiple(runs=10)
     best_ind, best_fit, best_fit_str, _, _seed, run_time = best_overall
     x = problem._decode(best_ind)
-    line = f"Easom best f(x,y)= {best_fit_str} at {tuple(round(v, 6) for v in x)} | time={run_time:.2f}s"
+    line = f"Easom best f(x,y)= {best_fit_str} at {fmt_vec(x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_1', line)
     vals = [r[1] for r in results]
@@ -98,7 +100,7 @@ def run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], popul
         show_progress=True,
         parallel_workers=4
     )
-    best_overall, results = ga.run_multiple(runs=1)
+    best_overall, results = ga.run_multiple(runs=5)
     best_tour, best_len, best_len_str, _, _seed, run_time = best_overall
     line = f"TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
     print(line)
@@ -118,26 +120,26 @@ def run_tsp():
     positions_grid = make_grid_positions(n, spacing=10)
     run_tsp_for_positions(f"grid_{n}", positions_grid, 200, 0.3, 170, 2, n)
 
-    # n=100
-    # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    # run_tsp_for_positions(f"random_{n}", positions_rand, 800, 0.2, 2000, 4, n)
+    n=100
+    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    run_tsp_for_positions(f"random_{n}", positions_rand, 800, 0.2, 2000, 4, n)
 
-    # positions_grid = make_grid_positions(n, spacing=10)
-    # run_tsp_for_positions(f"grid_{n}", positions_grid, 1000, 0.15, 2000, 4, n)
+    positions_grid = make_grid_positions(n, spacing=10)
+    run_tsp_for_positions(f"grid_{n}", positions_grid, 1000, 0.15, 2000, 4, n)
 
-    # n=225
-    # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    # run_tsp_for_positions(f"random_{n}", positions_rand, 1600, 0.2, 3000, 4, n)
+    n=225
+    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    run_tsp_for_positions(f"random_{n}", positions_rand, 1600, 0.2, 3000, 4, n)
 
-    # positions_grid = make_grid_positions(n, spacing=10)
-    # run_tsp_for_positions(f"grid_{n}", positions_grid, 1800, 0.15, 3000, 4, n)
+    positions_grid = make_grid_positions(n, spacing=10)
+    run_tsp_for_positions(f"grid_{n}", positions_grid, 1800, 0.15, 3000, 4, n)
 
 if __name__ == "__main__":
     header = "== Continuous optimization =="
     print(header)
     append_results('ejercicio_1', header)
-    # run_beale()
-    # run_easom()
+    run_beale()
+    run_easom()
 
     header = "\n== Traveling Salesman Problem =="
     print(header)

@@ -6,7 +6,7 @@ _PARENT_DIR = Path(__file__).resolve().parent.parent
 if str(_PARENT_DIR) not in sys.path:
     sys.path.insert(0, str(_PARENT_DIR))
 from typing import List, Tuple
-from ACO import AntSystem
+from aco import AntSystem
 from shared.tsp.functions import make_random_positions, make_grid_positions
 from shared.tsp.generator import export_tsp_graph
 from shared.results import append_results, compute_summary, format_summary_block
@@ -26,7 +26,7 @@ def run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], num_a
         dir_name=f"tsp_{name}",
         show_progress=True,
     )
-    best_overall, results = aco.run_multiple(runs=1)
+    best_overall, results = aco.run_multiple(runs=5)
     best_tour, best_len, best_len_str, _hist, _seed, run_time = best_overall
     line = f"ACO TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
     print(line)

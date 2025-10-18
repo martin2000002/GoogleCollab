@@ -1,0 +1,21 @@
+== Continuous: Beale & Rastrigin (GA, PSO, ACOR) ==
+-- Beale function (GA, PSO, ACOR) --
+GA Beale best f(x,y)= 5.516547e-07 at (3.001717, 0.500366) | time=0.77s
+    Summary (GA)
+    runs: 10
+    mean best: 5.561126e-05
+    mean time: 0.83s
+    std:  1.260372e-04
+PSO Beale best f(x,y)=3.183038e-06 at [3.003686, 0.501122] | time=0.58s
+    Summary (PSO)
+    runs: 10
+    mean best: 4.822784e-04
+    mean time: 0.47s
+    std:  6.812984e-04
+ACOR Beale best f(x,y)=6.782355e-30 at [3.000000, 0.500000] | time=0.96s
+    Summary (ACOR)
+    runs: 10
+    mean best: 2.625073e-27
+    mean time: 1.19s
+    std:  4.357583e-27
+-- Rastrigin n=10 (GA, PSO, ACOR) --
