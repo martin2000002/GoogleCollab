@@ -141,7 +141,7 @@ if __name__ == "__main__":
     run_beale()
     run_easom()
 
-    # header = "\n== Traveling Salesman Problem =="
-    # print(header)
-    # append_results('ejercicio_1', header)
-    # run_tsp()
+    header = "\n== Traveling Salesman Problem =="
+    print(header)
+    append_results('ejercicio_1', header)
+    run_tsp()
