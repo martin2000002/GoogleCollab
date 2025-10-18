@@ -7,7 +7,7 @@ if str(_PARENT_DIR) not in sys.path:
 from typing import Sequence
 from pso.functions import beale, easom, rastrigin
 from pso import ParticleSwarm
-from shared.results import append_results
+from shared.results import append_results, compute_summary, format_summary_block
 
 def _fmt_vec(x: Sequence[float]) -> str:
     return '[' + ', '.join(f"{float(v):.6f}" for v in x) + ']'
@@ -30,11 +30,17 @@ def run_beale():
         dir_name="beale",
         show_progress=True,
     )
-    best_overall, _ = pso.run_multiple(runs=10)
+    best_overall, results = pso.run_multiple(runs=10)
     best_x, best_f, best_f_str, _hist, _seed, run_time = best_overall
     line = f"Beale best f(x,y)={best_f_str} at {_fmt_vec(best_x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_2', line)
+    # Summary block
+    vals = [r[1] for r in results]
+    times = [r[-1] for r in results]
+    summ = compute_summary(vals, times)
+    for l in format_summary_block(summ, title="Summary"):
+        append_results('ejercicio_2', l)
 
 
 def run_easom():
@@ -55,11 +61,16 @@ def run_easom():
         dir_name="easom",
         show_progress=True,
     )
-    best_overall, _ = pso.run_multiple(runs=10)
+    best_overall, results = pso.run_multiple(runs=10)
     best_x, best_f, best_f_str, _hist, _seed, run_time = best_overall
     line = f"Easom best f(x,y)={best_f_str} at {_fmt_vec(best_x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_2', line)
+    vals = [r[1] for r in results]
+    times = [r[-1] for r in results]
+    summ = compute_summary(vals, times)
+    for l in format_summary_block(summ, title="Summary"):
+        append_results('ejercicio_2', l)
 
 
 def run_rastrigin_n10():
@@ -81,11 +92,16 @@ def run_rastrigin_n10():
         dir_name="rastrigin_n10",
         show_progress=True
     )
-    best_overall, _ = pso.run_multiple(runs=10)
+    best_overall, results = pso.run_multiple(runs=10)
     best_x, best_f, best_f_str, _hist, _seed, run_time = best_overall
     line = f"Rastrigin(n=10) best f(x)={best_f_str} at {_fmt_vec(best_x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_2', line)
+    vals = [r[1] for r in results]
+    times = [r[-1] for r in results]
+    summ = compute_summary(vals, times)
+    for l in format_summary_block(summ, title="Summary"):
+        append_results('ejercicio_2', l)
 
 
 if __name__ == "__main__":

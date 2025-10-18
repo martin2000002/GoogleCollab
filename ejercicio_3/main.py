@@ -9,7 +9,7 @@ from typing import List, Tuple
 from ACO import AntSystem
 from shared.tsp.functions import make_random_positions, make_grid_positions
 from shared.tsp.generator import export_tsp_graph
-from shared.results import append_results
+from shared.results import append_results, compute_summary, format_summary_block
 
 
 def run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], num_ants: int, max_epochs: int, alpha: float = 1.0, beta: float = 5.0, rho: float = 0.5, q: float = 1.0, seed: int = 3) -> None:
@@ -26,12 +26,17 @@ def run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], num_a
         dir_name=f"tsp_{name}",
         show_progress=True,
     )
-    best_overall, _ = aco.run_multiple(runs=1)
+    best_overall, results = aco.run_multiple(runs=1)
     best_tour, best_len, best_len_str, _hist, _seed, run_time = best_overall
     line = f"ACO TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_3', line)
     export_tsp_graph(positions, best_tour, f"{name}.graphml", annotate_indices=True, min_visual_distance=100 if name.startswith("grid_") else 30, export_root='ejercicio_3', dir_name=f"tsp_{name}")
+    vals = [r[1] for r in results]
+    times = [r[-1] for r in results]
+    summ = compute_summary(vals, times)
+    for l in format_summary_block(summ, title="Summary"):
+        append_results('ejercicio_3', l)
 
 def run_tsp():
     n = 25

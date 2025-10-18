@@ -11,7 +11,7 @@ from problems.continuous import BinaryContinuousProblem, beale_function, easom_f
 from problems.tsp import TSPProblem
 from shared.tsp.functions import make_grid_positions, make_random_positions
 from shared.tsp.generator import export_tsp_graph
-from shared.results import append_results
+from shared.results import append_results, compute_summary, format_summary_block
 
 def run_beale():
     bits = 16
@@ -35,12 +35,17 @@ def run_beale():
         log=True,
         dir_name="beale",
     )
-    best_overall, _ = ga.run_multiple(runs=10)
+    best_overall, results = ga.run_multiple(runs=10)
     best_ind, best_fit, best_fit_str, _, _seed, run_time = best_overall
     x = problem._decode(best_ind)
     line = f"Beale best f(x,y)= {best_fit_str} at {tuple(round(v, 6) for v in x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_1', line)
+    vals = [r[1] for r in results]
+    times = [r[-1] for r in results]
+    summ = compute_summary(vals, times)
+    for l in format_summary_block(summ, title="Summary"):
+        append_results('ejercicio_1', l)
 
 def run_easom():
     bits = 16
@@ -65,12 +70,17 @@ def run_easom():
         show_progress=True,
         dir_name="easom",
     )
-    best_overall, _ = ga.run_multiple(runs=10)
+    best_overall, results = ga.run_multiple(runs=10)
     best_ind, best_fit, best_fit_str, _, _seed, run_time = best_overall
     x = problem._decode(best_ind)
     line = f"Easom best f(x,y)= {best_fit_str} at {tuple(round(v, 6) for v in x)} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_1', line)
+    vals = [r[1] for r in results]
+    times = [r[-1] for r in results]
+    summ = compute_summary(vals, times)
+    for l in format_summary_block(summ, title="Summary"):
+        append_results('ejercicio_1', l)
 
 def run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], population_size: int = 100, elite_ratio: float = 0.2, max_generations: int = 500, k: int = 2, seed: int = 3):
     tsp = TSPProblem(positions, seed=seed)
@@ -88,11 +98,16 @@ def run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], popul
         show_progress=True,
         parallel_workers=4
     )
-    best_overall, _ = ga.run_multiple(runs=1)
+    best_overall, results = ga.run_multiple(runs=1)
     best_tour, best_len, best_len_str, _, _seed, run_time = best_overall
     line = f"TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
     print(line)
     append_results('ejercicio_1', line)
+    vals = [r[1] for r in results]
+    times = [r[-1] for r in results]
+    summ = compute_summary(vals, times)
+    for l in format_summary_block(summ, title="Summary"):
+        append_results('ejercicio_1', l)
     export_tsp_graph(positions, best_tour, f"{name}.graphml", annotate_indices=True, min_visual_distance=100 if name.startswith("grid_") else 30, export_root='ejercicio_1', dir_name=f"tsp_{name}")
 
 def run_tsp():
