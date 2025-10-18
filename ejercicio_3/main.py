@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 from pathlib import Path
 import sys
 _PARENT_DIR = Path(__file__).resolve().parent.parent
@@ -10,7 +9,6 @@ from aco import AntSystem
 from shared.tsp.functions import make_random_positions, make_grid_positions
 from shared.tsp.generator import export_tsp_graph
 from shared.results import append_results, compute_summary, format_summary_block
-
 
 def run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], num_ants: int, max_epochs: int, alpha: float = 1.0, beta: float = 5.0, rho: float = 0.5, q: float = 1.0, seed: int = 3) -> None:
     aco = AntSystem(
