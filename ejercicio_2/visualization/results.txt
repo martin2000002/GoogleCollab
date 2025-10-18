@@ -1,12 +1,4 @@
 == PSO on Continuous Functions ==
-Beale:
-    best f(x,y)=7.901334e-06 at [2.994103, 0.498217] | time=0.07s
-    DATOS QUE FALTAN (HAZ QUE SE VEAN BONITOS, O EN DIFERENTES LIENAS O EN UNA TABLA)
-
-Easom:
-    best f(x,y)=-0.999968753335 at [3.140318, 3.145975] | time=0.06s
-    DATOS QUE FALTAN (HAZ QUE SE VEAN BONITOS, O EN DIFERENTES LIENAS O EN UNA TABLA)
-...== PSO on Continuous Functions ==
 Beale best f(x,y)=7.901334e-06 at [2.994103, 0.498217] | time=0.12s
     Summary
     runs: 10

@@ -19,33 +19,32 @@ def append_results(exercise_root: Union[str, Path], text: str) -> str:
 	return str(out_path.resolve())
 
 def compute_summary(values: list[float], times: list[float]) -> dict:
-	"""Compute summary metrics for a list of run values and times."""
+	"""Compute summary metrics for a list of run values and times.
+	Returns keys: runs, mean_best, mean_time, std
+	"""
 	if not values or not times or len(values) != len(times):
 		raise ValueError("values and times must be non-empty and of same length")
 	n = len(values)
 	avg_val = mean(values)
 	std_val = stdev(values) if n > 1 else 0.0
 	avg_time = mean(times)
-	best_val = min(values)  # callers should pass minimization metrics
 	return {
 		"runs": n,
-		"best": best_val,
-		"mean": avg_val,
-		"std": std_val,
+		"mean_best": avg_val,
 		"mean_time": avg_time,
+		"std": std_val,
 	}
 
 def format_summary_block(summary: dict, title: str | None = None) -> list[str]:
 	"""Return pretty formatted lines for a summary block.
-	The 'best', 'mean', and 'std' are formatted with fmt_best, time with 2 decimals.
+	Formats mean_best and std with fmt_best, mean time with 2 decimals.
 	"""
 	lines: list[str] = []
 	if title:
 		lines.append(f"    {title}")
 	lines.append(f"    runs: {summary['runs']}")
-	lines.append(f"    best: {fmt_best(summary['best'])}")
-	lines.append(f"    mean: {fmt_best(summary['mean'])}")
-	lines.append(f"    std:  {fmt_best(summary['std'])}")
+	lines.append(f"    mean best: {fmt_best(summary['mean_best'])}")
 	lines.append(f"    mean time: {summary['mean_time']:.2f}s")
+	lines.append(f"    std:  {fmt_best(summary['std'])}")
 	return lines
 
