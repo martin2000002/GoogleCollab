@@ -69,7 +69,7 @@ def run_beale_all():
         random_seed=1,
         log=True,
         show_progress=True,
-        vis_root="ejercicio_5",
+        exe_root="ejercicio_5",
         dir_name="beale",
     )
     ga_best, ga_runs = ga.run_multiple(runs=10)
@@ -97,7 +97,7 @@ def run_beale_all():
         random_seed=12,
         log=True,
         dir_name="beale_pso",
-        vis_root="ejercicio_5",
+        exe_root="ejercicio_5",
         show_progress=True,
     )
     pso_best, pso_runs = pso.run_multiple(runs=10)
@@ -165,7 +165,7 @@ def run_rastrigin_n10_all():
         random_seed=21,
         log=True,
         dir_name="rastrigin_n10_ga",
-        vis_root="ejercicio_5",
+        exe_root="ejercicio_5",
         show_progress=True,
         parallel_workers=4,
     )
@@ -194,7 +194,7 @@ def run_rastrigin_n10_all():
     #     random_seed=3,
     #     log=True,
     #     dir_name="rastrigin_n10_pso",
-    #     vis_root="ejercicio_5",
+    #     exe_root="ejercicio_5",
     #     show_progress=True,
     # )
     # pso_best, pso_runs = pso.run_multiple(runs=10)
@@ -266,7 +266,7 @@ def _run_tsp_with_all(
     #     random_seed=seed,
     #     log=True,
     #     dir_name=f"tsp_{name}_ga",
-    #     vis_root="ejercicio_5",
+    #     exe_root="ejercicio_5",
     #     show_progress=True,
     #     parallel_workers=4,
     # )
@@ -297,7 +297,7 @@ def _run_tsp_with_all(
     #     random_seed=seed,
     #     log=True,
     #     dir_name=f"tsp_{name}_aco",
-    #     vis_root="ejercicio_5",
+    #     exe_root="ejercicio_5",
     #     show_progress=True,
     # )
     # aco_best, aco_runs = aco.run_multiple(runs=5)
