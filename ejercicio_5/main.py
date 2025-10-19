@@ -22,11 +22,11 @@ from ejercicio_1.problems.continuous import BinaryContinuousProblem, beale_funct
 from ejercicio_1.problems.tsp import TSPProblem
 
 # PSO (Ejercicio 2)
-from ejercicio_2.pso import ParticleSwarm
+from ejercicio_2.pso.core import ParticleSwarm
 from ejercicio_2.pso.functions import beale as pso_beale, rastrigin
 
 # ACO-AS (Ejercicio 3)
-from ejercicio_3.aco_c import AntSystem
+from ejercicio_3.aco_c.core import AntSystem
 
 # Adapted versions (this exercise)
 from pure_adapted.pso_tsp import SwapSequencePSO
@@ -69,6 +69,7 @@ def run_beale_all():
         random_seed=1,
         log=True,
         show_progress=True,
+        exe_root="ejercicio_5",
         dir_name="beale",
     )
     ga_best, ga_runs = ga.run_multiple(runs=10)
@@ -87,15 +88,16 @@ def run_beale_all():
         func=pso_beale,
         lower_bounds=[-4.5, -4.5],
         upper_bounds=[4.5, 4.5],
-        swarm_size=60,
-        max_epochs=150,
-        alpha1=1.0,
-        alpha2=1.0,
-        inertia=1.0,
+        swarm_size=100,
+        max_epochs=50,
+        alpha1=1,
+        alpha2=0.5,
+        inertia=0.5,
         maximize=False,
         random_seed=12,
         log=True,
         dir_name="beale_pso",
+        exe_root="ejercicio_5",
         show_progress=True,
     )
     pso_best, pso_runs = pso.run_multiple(runs=10)
@@ -115,7 +117,7 @@ def run_beale_all():
         upper_bounds=[4.5, 4.5],
         archive_size=40,
         samples_per_iter=40,
-        max_epochs=150,
+        max_epochs=50,
         q=0.1,
         xi=0.85,
         maximize=False,
@@ -163,6 +165,7 @@ def run_rastrigin_n10_all():
         random_seed=21,
         log=True,
         dir_name="rastrigin_n10_ga",
+        exe_root="ejercicio_5",
         show_progress=True,
         parallel_workers=4,
     )
@@ -186,11 +189,12 @@ def run_rastrigin_n10_all():
         max_epochs=4000,
         alpha1=0.55,
         alpha2=0.4,
-        inertia=1.0,
+        inertia=1,
         maximize=False,
-        random_seed=22,
+        random_seed=3,
         log=True,
         dir_name="rastrigin_n10_pso",
+        exe_root="ejercicio_5",
         show_progress=True,
     )
     pso_best, pso_runs = pso.run_multiple(runs=10)
@@ -252,6 +256,7 @@ def _run_tsp_with_all(name: str, positions: List[Tuple[float, float]], seed: int
         random_seed=seed,
         log=True,
         dir_name=f"tsp_{name}_ga",
+        exe_root="ejercicio_5",
         show_progress=True,
         parallel_workers=4,
     )
@@ -282,6 +287,7 @@ def _run_tsp_with_all(name: str, positions: List[Tuple[float, float]], seed: int
         random_seed=seed,
         log=True,
         dir_name=f"tsp_{name}_aco",
+        exe_root="ejercicio_5",
         show_progress=True,
     )
     aco_best, aco_runs = aco.run_multiple(runs=3)
@@ -352,7 +358,7 @@ if __name__ == "__main__":
     header = "== Continuous: Beale & Rastrigin (GA, PSO, ACOR) =="
     print(header)
     append_results('ejercicio_5', header)
-    run_beale_all()
+    # run_beale_all()
     run_rastrigin_n10_all()
 
     # header = "\n== TSP 25/100/225 (GA, ACO, PSO-swap) =="

@@ -38,6 +38,7 @@ class ParticleSwarm:
         log: bool = False,
         log_dir_name: Optional[str] = None,
         dir_name: Optional[str] = None,
+        exe_root: str = "ejercicio_2",
         show_progress: bool = False,
         progress_interval: int = 10,
         parallel_workers: Optional[int] = None,
@@ -65,6 +66,7 @@ class ParticleSwarm:
         self.log = log
         self.dir_name = dir_name if dir_name else (log_dir_name if log_dir_name else "pso")
         self.log_dir_name = self.dir_name
+        self.exe_root = exe_root
         self.show_progress = show_progress
         self.progress_interval = max(1, progress_interval)
         self.parallel_workers = parallel_workers if (parallel_workers or 0) > 1 else None
@@ -107,10 +109,10 @@ class ParticleSwarm:
         return np.minimum(np.maximum(x, self._lb), self._ub)
 
     def _resolve_log_dir(self) -> str:
-        return str(Path('ejercicio_2') / 'log' / self.dir_name)
+        return str(Path(self.exe_root) / 'log' / self.dir_name)
 
     def _resolve_vis_dir(self) -> Path:
-        return Path('ejercicio_2') / 'visualization' / self.dir_name
+        return Path(self.exe_root) / 'visualization' / self.dir_name
 
     def _prepare_log_dir(self, dir_path: str | Path) -> None:
         p = Path(dir_path)

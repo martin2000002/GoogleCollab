@@ -36,6 +36,7 @@ class AntSystem:
         log: bool = False,
         log_dir_name: Optional[str] = None,
         dir_name: Optional[str] = None,
+        exe_root: str = "ejercicio_3",
         show_progress: bool = False,
         progress_interval: int = 10,
         parallel_workers: Optional[int] = None,
@@ -63,6 +64,7 @@ class AntSystem:
         self.log = log
         self.dir_name = dir_name if dir_name else (log_dir_name if log_dir_name else "aco")
         self.log_dir_name = self.dir_name
+        self.exe_root = exe_root
         self.show_progress = show_progress
         self.progress_interval = max(1, progress_interval)
         self.parallel_workers = parallel_workers if (parallel_workers or 0) > 1 else None
@@ -124,7 +126,7 @@ class AntSystem:
         return Ant(tour=tour, length=L)
 
     def _resolve_log_dir(self) -> str:
-        return str(Path('ejercicio_3') / 'log' / self.dir_name)
+        return str(Path(self.exe_root) / 'log' / self.dir_name)
 
     def _prepare_log_dir(self, dir_path: str | Path) -> None:
         p = Path(dir_path)
@@ -141,6 +143,9 @@ class AntSystem:
             for epoch, (tour, fit) in enumerate(per_epoch_best):
                 tour_str = '[' + ', '.join(str(x) for x in tour) + ']'
                 f.write(f"gen={epoch}\tfitness={fit:.12f}\ttour={tour_str}\n")
+
+    def _resolve_vis_dir(self) -> Path:
+        return Path(self.exe_root) / 'visualization' / self.dir_name
 
     def _run_body(self, progress_label: Optional[str] = None) -> Tuple[List[int], float, List[float], List[Tuple[List[int], float]]]:
         # initial best (optional: nearest neighbor heuristic); here use random tour
@@ -221,7 +226,7 @@ class AntSystem:
             self._prepare_log_dir(log_dir)
             self._write_log(Path(log_dir) / 'run.txt', per_epoch, seed=None)
         # Save convergence plot
-        vis_dir = Path('ejercicio_3') / 'visualization' / self.dir_name
+        vis_dir = self._resolve_vis_dir()
         vis_dir.mkdir(parents=True, exist_ok=True)
         save_convergence(best_hist, vis_dir / 'convergence_run.png', title=f"ACO-AS - {self.dir_name}")
         return best_tour, best_len, fmt_best(best_len), best_hist, run_time
@@ -259,7 +264,7 @@ class AntSystem:
         assert best_overall is not None
         # Save best convergence plot
         _best_hist = best_overall[3]
-        vis_dir = Path('ejercicio_3') / 'visualization' / self.dir_name
+        vis_dir = self._resolve_vis_dir()
         vis_dir.mkdir(parents=True, exist_ok=True)
         save_convergence(_best_hist, vis_dir / 'convergence_best.png', title=f"ACO-AS - {self.dir_name} (best)")
         return best_overall, results
