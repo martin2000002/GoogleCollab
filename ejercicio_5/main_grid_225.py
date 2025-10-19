@@ -415,68 +415,68 @@ def _run_tsp_with_all(
             append_results('ejercicio_5', l)
 
 def run_tsp_all():
-    n = 25
-    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    _run_tsp_with_all(
-        f"random_{n}", positions_rand, seed=n,
-        ga_params=dict(population_size=100, elite_ratio=0.3, max_generations=260, k=4, mutation_prob=0.3),
-        aco_params=dict(num_ants=50, max_epochs=45, alpha=1, beta=4, rho=0.5, q=1),
-        pso_params=dict(swarm_size=1000, max_epochs=1100, alpha1=1, alpha2=0.5, inertia=0.5, vmax_frac=1),
-        hybrid_params=dict(
-            ga_population_size=100, ga_elite_ratio=0.3, ga_mutation_prob=0.3, ga_max_generations=10, ga_k=4,
-            num_ants=50, max_epochs=20, alpha=1, beta=4, rho=0.6, q=1
-        ),
-    )
+    # n = 25
+    # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    # _run_tsp_with_all(
+    #     f"random_{n}", positions_rand, seed=n,
+    #     ga_params=dict(population_size=100, elite_ratio=0.3, max_generations=260, k=4, mutation_prob=0.3),
+    #     aco_params=dict(num_ants=50, max_epochs=45, alpha=1, beta=4, rho=0.5, q=1),
+    #     pso_params=dict(swarm_size=1000, max_epochs=1100, alpha1=1, alpha2=0.5, inertia=0.5, vmax_frac=1),
+    #     hybrid_params=dict(
+    #         ga_population_size=100, ga_elite_ratio=0.3, ga_mutation_prob=0.3, ga_max_generations=10, ga_k=4,
+    #         num_ants=50, max_epochs=20, alpha=1, beta=4, rho=0.6, q=1
+    #     ),
+    # )
 
-    positions_grid = make_grid_positions(n, spacing=10)
-    _run_tsp_with_all(
-        f"grid_{n}", positions_grid, seed=n,
-        ga_params=dict(population_size=200, elite_ratio=0.3, max_generations=170, k=2, mutation_prob=0.3),
-        aco_params=dict(num_ants=50, max_epochs=10, alpha=1, beta=4, rho=0.5, q=1),
-        pso_params=dict(swarm_size=2000, max_epochs=300, alpha1=2.3, alpha2=0.5, inertia=0.4, vmax_frac=1),
-        hybrid_params=dict(
-            ga_population_size=200, ga_elite_ratio=0.3, ga_mutation_prob=0.3, ga_max_generations=2, ga_k=2,
-            num_ants=50, max_epochs=10, alpha=1, beta=4, rho=0.5, q=1,
-        ),
-    )
+    # positions_grid = make_grid_positions(n, spacing=10)
+    # _run_tsp_with_all(
+    #     f"grid_{n}", positions_grid, seed=n,
+    #     ga_params=dict(population_size=200, elite_ratio=0.3, max_generations=170, k=2, mutation_prob=0.3),
+    #     aco_params=dict(num_ants=50, max_epochs=10, alpha=1, beta=4, rho=0.5, q=1),
+    #     pso_params=dict(swarm_size=2000, max_epochs=300, alpha1=2.3, alpha2=0.5, inertia=0.4, vmax_frac=1),
+    #     hybrid_params=dict(
+    #         ga_population_size=200, ga_elite_ratio=0.3, ga_mutation_prob=0.3, ga_max_generations=2, ga_k=2,
+    #         num_ants=50, max_epochs=10, alpha=1, beta=4, rho=0.5, q=1,
+    #     ),
+    # )
 
-    n = 100
-    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    _run_tsp_with_all(
-        f"random_{n}", positions_rand, seed=n,
-        ga_params=dict(population_size=800, elite_ratio=0.2, max_generations=2000, k=4, mutation_prob=0.3),
-        aco_params=dict(num_ants=100, max_epochs=70, alpha=2, beta=5, rho=0.4, q=1),
-        pso_params=dict(swarm_size=4000, max_epochs=2000, alpha1=1, alpha2=0.9, inertia=0.88, vmax_frac=0.7),
-        hybrid_params=dict(
-            ga_population_size=200, ga_elite_ratio=0.2, ga_mutation_prob=0.1, ga_max_generations=100, ga_k=4,
-            num_ants=100, max_epochs=70, alpha=2, beta=5, rho=0.4, q=1,
-        ),
-    )
+    # n = 100
+    # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    # _run_tsp_with_all(
+    #     f"random_{n}", positions_rand, seed=n,
+    #     ga_params=dict(population_size=800, elite_ratio=0.2, max_generations=2000, k=4, mutation_prob=0.3),
+    #     aco_params=dict(num_ants=100, max_epochs=70, alpha=2, beta=5, rho=0.4, q=1),
+    #     pso_params=dict(swarm_size=4000, max_epochs=2000, alpha1=1, alpha2=0.9, inertia=0.88, vmax_frac=0.7),
+    #     hybrid_params=dict(
+    #         ga_population_size=200, ga_elite_ratio=0.2, ga_mutation_prob=0.1, ga_max_generations=100, ga_k=4,
+    #         num_ants=100, max_epochs=70, alpha=2, beta=5, rho=0.4, q=1,
+    #     ),
+    # )
 
-    positions_grid = make_grid_positions(n, spacing=10)
-    _run_tsp_with_all(
-        f"grid_{n}", positions_grid, seed=n,
-        ga_params=dict(population_size=1000, elite_ratio=0.15, max_generations=2000, k=4, mutation_prob=0.3),
-        aco_params=dict(num_ants=110, max_epochs=40, alpha=2, beta=5, rho=0.3, q=1),
-        pso_params=dict(swarm_size=8000, max_epochs=1800, alpha1=1, alpha2=0.9, inertia=0.88, vmax_frac=0.65),
-        hybrid_params=dict(
-            ga_population_size=200, ga_elite_ratio=0.2, ga_mutation_prob=0.3, ga_max_generations=1, ga_k=4,
-            num_ants=110, max_epochs=32, alpha=2, beta=5, rho=0.3, q=1
-        ),
-    )
+    # positions_grid = make_grid_positions(n, spacing=10)
+    # _run_tsp_with_all(
+    #     f"grid_{n}", positions_grid, seed=n,
+    #     ga_params=dict(population_size=1000, elite_ratio=0.15, max_generations=2000, k=4, mutation_prob=0.3),
+    #     aco_params=dict(num_ants=110, max_epochs=40, alpha=2, beta=5, rho=0.3, q=1),
+    #     pso_params=dict(swarm_size=8000, max_epochs=1800, alpha1=1, alpha2=0.9, inertia=0.88, vmax_frac=0.65),
+    #     hybrid_params=dict(
+    #         ga_population_size=200, ga_elite_ratio=0.2, ga_mutation_prob=0.3, ga_max_generations=1, ga_k=4,
+    #         num_ants=110, max_epochs=32, alpha=2, beta=5, rho=0.3, q=1
+    #     ),
+    # )
 
     n = 225
-    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    _run_tsp_with_all(
-        f"random_{n}", positions_rand, seed=n,
-        ga_params=dict(population_size=1600, elite_ratio=0.2, max_generations=3000, k=4, mutation_prob=0.3),
-        aco_params=dict(num_ants=400, max_epochs=140, alpha=2, beta=5, rho=0.3, q=1),
-        pso_params=dict(swarm_size=9000, max_epochs=3000, alpha1=1, alpha2=0.9, inertia=0.90, vmax_frac=0.7),
-        hybrid_params=dict(
-            ga_population_size=100, ga_elite_ratio=0.2, ga_mutation_prob=0.3, ga_max_generations=100, ga_k=4,
-            num_ants=230, max_epochs=100, alpha=2, beta=5, rho=0.3, q=1,
-        ),
-    )
+    # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    # _run_tsp_with_all(
+    #     f"random_{n}", positions_rand, seed=n,
+    #     ga_params=dict(population_size=1600, elite_ratio=0.2, max_generations=3000, k=4, mutation_prob=0.3),
+    #     aco_params=dict(num_ants=400, max_epochs=140, alpha=2, beta=5, rho=0.3, q=1),
+    #     pso_params=dict(swarm_size=9000, max_epochs=3000, alpha1=1, alpha2=0.9, inertia=0.90, vmax_frac=0.7),
+    #     hybrid_params=dict(
+    #         ga_population_size=100, ga_elite_ratio=0.2, ga_mutation_prob=0.3, ga_max_generations=100, ga_k=4,
+    #         num_ants=230, max_epochs=100, alpha=2, beta=5, rho=0.3, q=1,
+    #     ),
+    # )
 
     positions_grid = make_grid_positions(n, spacing=10)
     _run_tsp_with_all(
@@ -492,11 +492,11 @@ def run_tsp_all():
 
 
 if __name__ == "__main__":
-    header = "== Continuous: Beale & Rastrigin (GA, PSO, ACOR) =="
-    print(header)
-    append_results('ejercicio_5', header)
-    run_beale_all()
-    run_rastrigin_n10_all()
+    # header = "== Continuous: Beale & Rastrigin (GA, PSO, ACOR) =="
+    # print(header)
+    # append_results('ejercicio_5', header)
+    # run_beale_all()
+    # run_rastrigin_n10_all()
 
     header = "\n== TSP 25/100/225 (GA, ACO, PSO-swap) =="
     print(header)

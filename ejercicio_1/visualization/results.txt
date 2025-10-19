@@ -1,0 +1,7 @@
+== Continuous optimization ==
+Beale best f(x,y)= 1.981444e-08 at [3.000343, 0.500092] | time=0.46s
+    Summary
+    runs: 10
+    mean best: 6.532415e-06
+    mean time: 0.66s
+    std:  6.314418e-06

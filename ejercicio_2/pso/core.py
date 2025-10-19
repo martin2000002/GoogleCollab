@@ -215,21 +215,6 @@ class ParticleSwarm:
 
         return gbest_x, gbest_f, history, per_epoch_best
 
-    # --- Public API ---
-    def run(self) -> Tuple[np.ndarray, float, str, List[float], float]:
-        _t0 = time.perf_counter()
-        best_x, best_f, history, per_epoch = self._run_body(progress_label="run")
-        run_time = time.perf_counter() - _t0
-        if self.log:
-            log_dir = self._resolve_log_dir()
-            self._prepare_log_dir(log_dir)
-            self._write_log(Path(log_dir) / 'run.txt', per_epoch, seed=None)
-        # Save convergence plot
-        vis_dir = self._resolve_vis_dir()
-        vis_dir.mkdir(parents=True, exist_ok=True)
-        save_convergence(history, vis_dir / 'convergence_run.png', title=f"PSO - {self.dir_name}")
-        return best_x, best_f, fmt_best(best_f), history, run_time
-
     def run_multiple(self, runs: int) -> Tuple[Tuple[np.ndarray, float, str, List[float], int, float], List[Tuple[np.ndarray, float, str, List[float], int, float]]]:
         if runs <= 0:
             raise ValueError("runs must be > 0")

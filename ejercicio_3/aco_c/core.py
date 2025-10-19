@@ -217,20 +217,6 @@ class AntSystem:
 
         return gbest_tour, gbest_len, best_history, per_epoch_best
 
-    def run(self) -> Tuple[List[int], float, str, List[float], float]:
-        _t0 = time.perf_counter()
-        best_tour, best_len, best_hist, per_epoch = self._run_body(progress_label="run")
-        run_time = time.perf_counter() - _t0
-        if self.log:
-            log_dir = self._resolve_log_dir()
-            self._prepare_log_dir(log_dir)
-            self._write_log(Path(log_dir) / 'run.txt', per_epoch, seed=None)
-        # Save convergence plot
-        vis_dir = self._resolve_vis_dir()
-        vis_dir.mkdir(parents=True, exist_ok=True)
-        save_convergence(best_hist, vis_dir / 'convergence_run.png', title=f"ACO-AS - {self.dir_name}")
-        return best_tour, best_len, fmt_best(best_len), best_hist, run_time
-
     def run_multiple(self, runs: int) -> Tuple[Tuple[List[int], float, str, List[float], int, float], List[Tuple[List[int], float, str, List[float], int, float]]]:
         if runs <= 0:
             raise ValueError("runs must be > 0")
