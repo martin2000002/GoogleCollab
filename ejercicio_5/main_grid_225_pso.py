@@ -483,7 +483,7 @@ def run_tsp_all():
         f"grid_{n}", positions_grid, seed=n,
         ga_params=dict(population_size=1800, elite_ratio=0.15, max_generations=3000, k=4, mutation_prob=0.3),
         aco_params=dict(num_ants=500, max_epochs=100, alpha=2, beta=5, rho=0.2, q=1),
-        pso_params=dict(swarm_size=18000, max_epochs=2800, alpha1=1, alpha2=0.9, inertia=0.90, vmax_frac=0.65),
+        pso_params=dict(swarm_size=2000, max_epochs=200, alpha1=1, alpha2=0.9, inertia=0.90, vmax_frac=0.65),
         hybrid_params=dict(
             ga_population_size=100, ga_elite_ratio=0.2, ga_mutation_prob=0.3, ga_max_generations=100, ga_k=4,
             num_ants=500, max_epochs=90, alpha=2, beta=5, rho=0.2, q=1,
