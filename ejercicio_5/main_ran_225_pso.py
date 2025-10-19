@@ -296,62 +296,62 @@ def _run_tsp_with_all(
     print(header)
     append_results('ejercicio_5', header)
 
-    ga_prob = TSPProblem(positions, seed=seed)
-    if ga_params is None:
-        ga_params = {}
-    ga = GeneticAlgorithm(
-        problem=ga_prob,
-        population_size=ga_params.get("population_size", max(100, len(positions) * 4)),
-        mutation_prob=ga_params.get("mutation_prob", 0.3),
-        elite_ratio=ga_params.get("elite_ratio", 0.2),
-        max_generations=ga_params.get("max_generations", max(200, len(positions) * 8)),
-        selection=TournamentSelection(k=ga_params.get("k", 3)),
-        maximize=False,
-        random_seed=seed,
-        log=True,
-        dir_name=f"tsp_{name}_ga",
-        exe_root="ejercicio_5",
-        show_progress=True,
-        parallel_workers=4,
-    )
-    ga_best, ga_runs = ga.run_multiple(runs=RUNS)
-    best_tour, best_len, best_len_str, _hist, _seed, run_time = ga_best
-    line = f"GA TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
-    print(line)
-    append_results('ejercicio_5', line)
-    export_tsp_graph(positions, best_tour, f"{name}_ga.graphml", annotate_indices=True, min_visual_distance=100 if name.startswith("grid_") else 30, export_root='ejercicio_5', dir_name=f"tsp_{name}_ga")
-    vals = [r[1] for r in ga_runs]
-    times = [r[-1] for r in ga_runs]
-    for l in format_summary_block(compute_summary(vals, times), title="Summary (GA)"):
-        append_results('ejercicio_5', l)
+    # ga_prob = TSPProblem(positions, seed=seed)
+    # if ga_params is None:
+    #     ga_params = {}
+    # ga = GeneticAlgorithm(
+    #     problem=ga_prob,
+    #     population_size=ga_params.get("population_size", max(100, len(positions) * 4)),
+    #     mutation_prob=ga_params.get("mutation_prob", 0.3),
+    #     elite_ratio=ga_params.get("elite_ratio", 0.2),
+    #     max_generations=ga_params.get("max_generations", max(200, len(positions) * 8)),
+    #     selection=TournamentSelection(k=ga_params.get("k", 3)),
+    #     maximize=False,
+    #     random_seed=seed,
+    #     log=True,
+    #     dir_name=f"tsp_{name}_ga",
+    #     exe_root="ejercicio_5",
+    #     show_progress=True,
+    #     parallel_workers=4,
+    # )
+    # ga_best, ga_runs = ga.run_multiple(runs=RUNS)
+    # best_tour, best_len, best_len_str, _hist, _seed, run_time = ga_best
+    # line = f"GA TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
+    # print(line)
+    # append_results('ejercicio_5', line)
+    # export_tsp_graph(positions, best_tour, f"{name}_ga.graphml", annotate_indices=True, min_visual_distance=100 if name.startswith("grid_") else 30, export_root='ejercicio_5', dir_name=f"tsp_{name}_ga")
+    # vals = [r[1] for r in ga_runs]
+    # times = [r[-1] for r in ga_runs]
+    # for l in format_summary_block(compute_summary(vals, times), title="Summary (GA)"):
+    #     append_results('ejercicio_5', l)
 
     n = len(positions)
-    if aco_params is None:
-        aco_params = {}
-    aco = AntSystem(
-        positions=positions,
-        num_ants=aco_params.get("num_ants", max(30, n // 2)),
-        max_epochs=aco_params.get("max_epochs", max(50, n)),
-        alpha=aco_params.get("alpha", 1),
-        beta=aco_params.get("beta", 5),
-        rho=aco_params.get("rho", 0.5),
-        q=aco_params.get("q", 1),
-        random_seed=seed,
-        log=True,
-        dir_name=f"tsp_{name}_aco",
-        exe_root="ejercicio_5",
-        show_progress=True,
-    )
-    aco_best, aco_runs = aco.run_multiple(runs=RUNS)
-    best_tour, best_len, best_len_str, _hist, _seed, run_time = aco_best
-    line = f"ACO TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
-    print(line)
-    append_results('ejercicio_5', line)
-    export_tsp_graph(positions, best_tour, f"{name}_aco.graphml", annotate_indices=True, min_visual_distance=100 if name.startswith("grid_") else 30, export_root='ejercicio_5', dir_name=f"tsp_{name}_aco")
-    vals = [r[1] for r in aco_runs]
-    times = [r[-1] for r in aco_runs]
-    for l in format_summary_block(compute_summary(vals, times), title="Summary (ACO)"):
-        append_results('ejercicio_5', l)
+    # if aco_params is None:
+    #     aco_params = {}
+    # aco = AntSystem(
+    #     positions=positions,
+    #     num_ants=aco_params.get("num_ants", max(30, n // 2)),
+    #     max_epochs=aco_params.get("max_epochs", max(50, n)),
+    #     alpha=aco_params.get("alpha", 1),
+    #     beta=aco_params.get("beta", 5),
+    #     rho=aco_params.get("rho", 0.5),
+    #     q=aco_params.get("q", 1),
+    #     random_seed=seed,
+    #     log=True,
+    #     dir_name=f"tsp_{name}_aco",
+    #     exe_root="ejercicio_5",
+    #     show_progress=True,
+    # )
+    # aco_best, aco_runs = aco.run_multiple(runs=RUNS)
+    # best_tour, best_len, best_len_str, _hist, _seed, run_time = aco_best
+    # line = f"ACO TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
+    # print(line)
+    # append_results('ejercicio_5', line)
+    # export_tsp_graph(positions, best_tour, f"{name}_aco.graphml", annotate_indices=True, min_visual_distance=100 if name.startswith("grid_") else 30, export_root='ejercicio_5', dir_name=f"tsp_{name}_aco")
+    # vals = [r[1] for r in aco_runs]
+    # times = [r[-1] for r in aco_runs]
+    # for l in format_summary_block(compute_summary(vals, times), title="Summary (ACO)"):
+    #     append_results('ejercicio_5', l)
 
     if pso_params is None:
         pso_params = {}
@@ -380,39 +380,39 @@ def _run_tsp_with_all(
     for l in format_summary_block(compute_summary(vals, times), title="Summary (PSO-swap)"):
         append_results('ejercicio_5', l)
 
-    if hybrid_params is not None:
-        hp = hybrid_params
-        hyb = HybridGAACO_TSP(
-            positions=positions,
-            ga_population_size=hp.get("ga_population_size", max(100, len(positions) * 4)),
-            ga_elite_ratio=hp.get("ga_elite_ratio", 0.2),
-            ga_mutation_prob=hp.get("ga_mutation_prob", 0.3),
-            ga_max_generations=hp.get("ga_max_generations", max(200, len(positions) * 4)),
-            ga_k=hp.get("ga_k", 3),
-            ga_runs=hp.get("ga_runs", 2),
-            num_ants=hp.get("num_ants", max(30, len(positions) // 2)),
-            max_epochs=hp.get("max_epochs", max(40, len(positions) // 2)),
-            alpha=hp.get("alpha", 1),
-            beta=hp.get("beta", 5),
-            rho=hp.get("rho", 0.5),
-            q=hp.get("q", 1),
-            random_seed=seed,
-            log=True,
-            dir_name=f"tsp_{name}_hybrid",
-            exe_root="ejercicio_5",
-            show_progress=True,
-            parallel_workers=4,
-        )
-        hyb_best, hyb_runs = hyb.run_multiple(runs=RUNS)
-        best_tour, best_len, best_len_str, _hist, _seed, run_time = hyb_best
-        line = f"Hybrid(GA→ACO) TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
-        print(line)
-        append_results('ejercicio_5', line)
-        export_tsp_graph(positions, best_tour, f"{name}_hybrid.graphml", annotate_indices=True, min_visual_distance=100 if name.startswith("grid_") else 30, export_root='ejercicio_5', dir_name=f"tsp_{name}_hybrid")
-        vals = [r[1] for r in hyb_runs]
-        times = [r[-1] for r in hyb_runs]
-        for l in format_summary_block(compute_summary(vals, times), title="Summary (Hybrid)"):
-            append_results('ejercicio_5', l)
+    # if hybrid_params is not None:
+    #     hp = hybrid_params
+    #     hyb = HybridGAACO_TSP(
+    #         positions=positions,
+    #         ga_population_size=hp.get("ga_population_size", max(100, len(positions) * 4)),
+    #         ga_elite_ratio=hp.get("ga_elite_ratio", 0.2),
+    #         ga_mutation_prob=hp.get("ga_mutation_prob", 0.3),
+    #         ga_max_generations=hp.get("ga_max_generations", max(200, len(positions) * 4)),
+    #         ga_k=hp.get("ga_k", 3),
+    #         ga_runs=hp.get("ga_runs", 2),
+    #         num_ants=hp.get("num_ants", max(30, len(positions) // 2)),
+    #         max_epochs=hp.get("max_epochs", max(40, len(positions) // 2)),
+    #         alpha=hp.get("alpha", 1),
+    #         beta=hp.get("beta", 5),
+    #         rho=hp.get("rho", 0.5),
+    #         q=hp.get("q", 1),
+    #         random_seed=seed,
+    #         log=True,
+    #         dir_name=f"tsp_{name}_hybrid",
+    #         exe_root="ejercicio_5",
+    #         show_progress=True,
+    #         parallel_workers=4,
+    #     )
+    #     hyb_best, hyb_runs = hyb.run_multiple(runs=RUNS)
+    #     best_tour, best_len, best_len_str, _hist, _seed, run_time = hyb_best
+    #     line = f"Hybrid(GA→ACO) TSP [{name}] best length= {best_len_str} | time={run_time:.2f}s"
+    #     print(line)
+    #     append_results('ejercicio_5', line)
+    #     export_tsp_graph(positions, best_tour, f"{name}_hybrid.graphml", annotate_indices=True, min_visual_distance=100 if name.startswith("grid_") else 30, export_root='ejercicio_5', dir_name=f"tsp_{name}_hybrid")
+    #     vals = [r[1] for r in hyb_runs]
+    #     times = [r[-1] for r in hyb_runs]
+    #     for l in format_summary_block(compute_summary(vals, times), title="Summary (Hybrid)"):
+    #         append_results('ejercicio_5', l)
 
 def run_tsp_all():
     # n = 25
