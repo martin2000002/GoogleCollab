@@ -1,0 +1,37 @@
+== ACO-AS on TSP ==
+ACO TSP [random_25] best length= 385.869106324597 | time=0.28s
+    Summary
+    runs: 5
+    mean best: 388.044481235209
+    mean time: 0.27s
+    std:  2.978754773933
+ACO TSP [grid_25] best length= 254.142135623731 | time=0.06s
+    Summary
+    runs: 5
+    mean best: 254.142135623731
+    mean time: 0.06s
+    std:  0.000000000000
+ACO TSP [random_100] best length= 805.856359214879 | time=13.99s
+    Summary
+    runs: 5
+    mean best: 812.464286744482
+    mean time: 14.53s
+    std:  6.157413090207
+ACO TSP [grid_100] best length= 1000.000000000000 | time=9.25s
+    Summary
+    runs: 5
+    mean best: 1000.000000000000
+    mean time: 9.10s
+    std:  0.000000000000
+ACO TSP [random_225] best length= 1260.192490727607 | time=726.21s
+    Summary
+    runs: 5
+    mean best: 1265.085843949645
+    mean time: 734.82s
+    std:  3.090600146979
+ACO TSP [grid_225] best length= 2317.082039324994 | time=662.45s
+    Summary
+    runs: 5
+    mean best: 2327.710832584454
+    mean time: 672.12s
+    std:  8.565016947676

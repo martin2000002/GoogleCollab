@@ -10,7 +10,7 @@ from ga.selections.tournament import TournamentSelection
 from problems.continuous import BinaryContinuousProblem, beale_function, easom_function
 from problems.tsp import TSPProblem
 from shared.tsp.functions import make_grid_positions, make_random_positions
-from shared.tsp.generator import export_tsp_graph
+from shared.tsp.graphml_generator import export_tsp_graph
 from shared.results import append_results, compute_summary, format_summary_block
 from shared.utils import fmt_vec
 

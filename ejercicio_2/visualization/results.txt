@@ -1,0 +1,19 @@
+== PSO on Continuous Functions ==
+Beale best f(x,y)=2.381569e-18 at [3.000000, 0.500000] | time=0.06s
+    Summary
+    runs: 10
+    mean best: 8.661523e-17
+    mean time: 0.06s
+    std:  1.639872e-16
+Easom best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.10s
+    Summary
+    runs: 10
+    mean best: -1.000000000000
+    mean time: 0.10s
+    std:  1.078943e-16
+Rastrigin(n=10) best f(x)=0.003208189283 at [0.000489, 0.000590, -0.000535, -0.002436, 0.002117, -0.000005, 0.000687, 0.000731, -0.001913, 0.000462] | time=103.73s
+    Summary
+    runs: 10
+    mean best: 0.086316566780
+    mean time: 103.41s
+    std:  0.081426841121

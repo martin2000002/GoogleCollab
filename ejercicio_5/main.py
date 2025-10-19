@@ -34,7 +34,7 @@ from pure_adapted.acor import ACOR
 from hybrid import HybridGAACO_TSP, HybridGAACOR
 
 from shared.tsp.functions import make_random_positions, make_grid_positions
-from shared.tsp.generator import export_tsp_graph
+from shared.tsp.graphml_generator import export_tsp_graph
 from shared.results import append_results, compute_summary, format_summary_block
 from shared.utils import fmt_best, fmt_vec
 
@@ -255,14 +255,14 @@ def run_rastrigin_n10_all():
         lower_bounds=lb,
         upper_bounds=ub,
         ga_population_size=1000,
-        ga_mutation_prob=0.0625,
+        ga_mutation_prob=0.01,
         ga_elite_ratio=0.1,
         ga_k=2,
-        ga_max_generations=50,
+        ga_max_generations=55,
         ga_runs=1,
         archive_size=120,
         samples_per_iter=180,
-        max_epochs=90,
+        max_epochs=70,
         q=0.1,
         xi=0.5,
         random_seed=24,

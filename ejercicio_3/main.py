@@ -7,7 +7,7 @@ if str(_PARENT_DIR) not in sys.path:
 from typing import List, Tuple
 from aco_c.core import AntSystem
 from shared.tsp.functions import make_random_positions, make_grid_positions
-from shared.tsp.generator import export_tsp_graph
+from shared.tsp.graphml_generator import export_tsp_graph
 from shared.results import append_results, compute_summary, format_summary_block
 
 def run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], num_ants: int, max_epochs: int, alpha: float = 1.0, beta: float = 5.0, rho: float = 0.5, q: float = 1.0, seed: int = 3) -> None:

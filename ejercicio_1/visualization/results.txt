@@ -1,7 +1,51 @@
 == Continuous optimization ==
-Beale best f(x,y)= 1.981444e-08 at [3.000343, 0.500092] | time=0.46s
+Beale best f(x,y)= 1.981444e-08 at [3.000343, 0.500092] | time=0.26s
     Summary
     runs: 10
     mean best: 6.532415e-06
-    mean time: 0.66s
+    mean time: 0.23s
     std:  6.314418e-06
+Easom best f(x,y)= -0.999956706353 at [3.145953, 3.144732] | time=0.08s
+    Summary
+    runs: 10
+    mean best: -0.997806735028
+    mean time: 0.05s
+    std:  0.001773270420
+
+== Traveling Salesman Problem ==
+TSP [random_25] best length= 385.342604816606 | time=0.73s
+    Summary
+    runs: 5
+    mean best: 400.053650699978
+    mean time: 0.78s
+    std:  10.401035670527
+TSP [grid_25] best length= 254.142135623731 | time=1.06s
+    Summary
+    runs: 5
+    mean best: 271.370678781192
+    mean time: 1.03s
+    std:  9.672150214683
+TSP [random_100] best length= 840.432426541070 | time=206.26s
+    Summary
+    runs: 5
+    mean best: 879.417473053552
+    mean time: 206.62s
+    std:  40.490055783192
+TSP [grid_100] best length= 1078.503395562303 | time=271.66s
+    Summary
+    runs: 5
+    mean best: 1119.947501847998
+    mean time: 269.76s
+    std:  28.272192770313
+TSP [random_225] best length= 1575.893633786478 | time=2223.96s
+    Summary
+    runs: 5
+    mean best: 1622.020993488310
+    mean time: 2227.49s
+    std:  61.801185923435
+TSP [grid_225] best length= 2734.052084290751 | time=2650.77s
+    Summary
+    runs: 5
+    mean best: 3132.551986525378
+    mean time: 2652.26s
+    std:  399.780113652915

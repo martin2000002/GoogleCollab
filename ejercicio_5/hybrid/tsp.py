@@ -111,7 +111,7 @@ class HybridGAACO_TSP:
             maximize=False,
             random_seed=self.random_seed or 0,
             log=False,
-            dir_name=f"{self.dir_name}_ga",
+            dir_name=f"{self.dir_name}_ga_hyb",
             exe_root=self.exe_root,
             save_plots=False,
             show_progress=False,

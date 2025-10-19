@@ -1,0 +1,131 @@
+== Continuous: Beale & Rastrigin (GA, PSO, ACOR) ==
+-- Beale function (GA, PSO, ACOR) --
+GA Beale best f(x,y)= 1.981444e-08 at [3.000343, 0.500092] | time=0.17s
+    Summary (GA)
+    runs: 10
+    mean best: 6.532415e-06
+    mean time: 0.57s
+    std:  6.314418e-06
+PSO Beale best f(x,y)=3.458181e-18 at [3.000000, 0.500000] | time=0.07s
+    Summary (PSO)
+    runs: 10
+    mean best: 0.015450473081
+    mean time: 0.08s
+    std:  0.048858685863
+ACOR Beale best f(x,y)=1.804662e-16 at [3.000000, 0.500000] | time=0.12s
+    Summary (ACOR)
+    runs: 10
+    mean best: 5.107516e-14
+    mean time: 0.12s
+    std:  7.631302e-14
+Hybrid(GA→ACOR) Beale best f(x,y)=3.332509e-27 at [3.000000, 0.500000] | time=0.23s
+    Summary (Hybrid)
+    runs: 10
+    mean best: 2.465091e-11
+    mean time: 0.23s
+    std:  7.788980e-11
+-- Rastrigin n=10 (GA, PSO, ACOR) --
+GA Rastrigin(n=10) best f(x)=0.016576727069 at [0.003984, 0.001484, 0.005078, 0.002578, -0.001016, 0.003828, 0.001953, -0.001797, -0.003203, 0.000234] | time=137.90s
+    Summary (GA)
+    runs: 10
+    mean best: 0.035502118573
+    mean time: 139.32s
+    std:  0.012833871838
+PSO Rastrigin(n=10) best f(x)=0.019755222863 at [-0.001915, 0.000124, 0.000384, -0.003108, 0.002057, -0.002466, 0.006168, 0.000833, -0.002779, -0.005415] | time=92.83s
+    Summary (PSO)
+    runs: 10
+    mean best: 0.604867501474
+    mean time: 92.63s
+    std:  0.751909812471
+ACOR Rastrigin(n=10) best f(x)=0.000000000000 at [0.000000, -0.000000, 0.000000, 0.000000, -0.000000, 0.000000, -0.000000, 0.000000, -0.000000, -0.000000] | time=132.91s
+    Summary (ACOR)
+    runs: 10
+    mean best: 13.974089466463
+    mean time: 131.09s
+    std:  6.915276493192
+Hybrid(GA→ACOR) Rastrigin(n=10) best f(x)=2.842171e-13 at [0.000000, 0.000000, -0.000000, -0.000000, 0.000000, 0.000000, -0.000000, 0.000000, 0.000000, 0.000000] | time=6.68s
+    Summary (Hybrid)
+    runs: 10
+    mean best: 9.180923e-11
+    mean time: 6.83s
+    std:  2.088743e-10
+
+== TSP 25/100/225 (GA, ACO, PSO-swap) ==
+-- TSP random_25 (GA, ACO, PSO-swap) --
+PSO-swap TSP [random_25] best length= 385.342604816606 | time=45.44s
+    Summary (PSO-swap)
+    runs: 10
+    mean best: 476.434054960608
+    mean time: 44.60s
+    std:  67.557765404090
+Hybrid(GA→ACO) TSP [random_25] best length= 385.869106324597 | time=0.20s
+    Summary (Hybrid)
+    runs: 10
+    mean best: 388.804126688197
+    mean time: 0.20s
+    std:  2.292041179638
+-- TSP grid_25 (GA, ACO, PSO-swap) --
+PSO-swap TSP [grid_25] best length= 280.644951022460 | time=43.57s
+    Summary (PSO-swap)
+    runs: 10
+    mean best: 299.497106408123
+    mean time: 43.87s
+    std:  16.165502465684
+Hybrid(GA→ACO) TSP [grid_25] best length= 254.142135623731 | time=0.09s
+    Summary (Hybrid)
+    runs: 10
+    mean best: 254.142135623731
+    mean time: 0.10s
+    std:  0.000000000000
+-- TSP random_100 (GA, ACO, PSO-swap) --
+PSO-swap TSP [random_100] best length= 3466.939302528920 | time=245.62s
+    Summary (PSO-swap)
+    runs: 10
+    mean best: 3857.577429742558
+    mean time: 258.26s
+    std:  207.634368655906
+Hybrid(GA→ACO) TSP [random_100] best length= 803.276358259784 | time=19.91s
+    Summary (Hybrid)
+    runs: 10
+    mean best: 820.097361762867
+    mean time: 19.57s
+    std:  12.242062889439
+-- TSP grid_100 (GA, ACO, PSO-swap) --
+PSO-swap TSP [grid_100] best length= 2714.871168032952 | time=268.44s
+    Summary (PSO-swap)
+    runs: 10
+    mean best: 3915.578851860747
+    mean time: 267.49s
+    std:  425.830096365078
+Hybrid(GA→ACO) TSP [grid_100] best length= 1000.000000000000 | time=7.81s
+    Summary (Hybrid)
+    runs: 10
+    mean best: 1016.425174877244
+    mean time: 7.42s
+    std:  11.470146735670
+-- TSP random_225 (GA, ACO, PSO-swap) --
+PSO-swap TSP [random_225] best length= 9229.177004688898 | time=934.20s
+    Summary (PSO-swap)
+    runs: 10
+    mean best: 9728.095800066207
+    mean time: 1018.11s
+    std:  225.994529702567
+Hybrid(GA→ACO) TSP [random_225] best length= 1244.768494313600 | time=328.42s
+    Summary (Hybrid)
+    runs: 10
+    mean best: 1262.921379248093
+    mean time: 334.89s
+    std:  10.730642066788
+-- TSP grid_225 (GA, ACO, PSO-swap) --
+PSO-swap TSP [grid_225] best length= 14955.767406398361 | time=91.90s
+    Summary (PSO-swap)
+    runs: 10
+    mean best: 15098.579132926687
+    mean time: 96.92s
+    std:  138.179879759329
+Hybrid(GA→ACO) TSP [grid_225] best length= 2280.644951022460 | time=599.81s
+    Summary (Hybrid)
+    runs: 10
+    mean best: 2304.772046979167
+    mean time: 605.37s
+    std:  15.669300371203
