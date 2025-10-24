@@ -664,16 +664,16 @@ def run_ablation_all():
 
 
 if __name__ == "__main__":
-    header = "== Continuous: Beale & Rastrigin (GA, PSO, ACOR) =="
-    print(header)
-    append_results('ejercicio_5', header)
-    run_beale_all()
-    run_rastrigin_n10_all()
+    # header = "== Continuous: Beale & Rastrigin (GA, PSO, ACOR) =="
+    # print(header)
+    # append_results('ejercicio_5', header)
+    # run_beale_all()
+    # run_rastrigin_n10_all()
 
-    header = "\n== TSP 25/100/225 (GA, ACO, PSO-swap) =="
-    print(header)
-    append_results('ejercicio_5', header)
-    run_tsp_all()
+    # header = "\n== TSP 25/100/225 (GA, ACO, PSO-swap) =="
+    # print(header)
+    # append_results('ejercicio_5', header)
+    # run_tsp_all()
 
     # Ejecutar ablation requerida (solo dos variantes: sin elitismo y sin feromona)
     header = "\n== Ablation (elitismo y feromona) en Beale, Rastrigin y TSP =="
