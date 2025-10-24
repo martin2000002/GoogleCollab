@@ -42,8 +42,8 @@ class HybridGAACOR:
         # misc
         random_seed: Optional[int] = None,
         log: bool = False,
-    dir_name: Optional[str] = None,
-    exe_root: str = "ejercicio_5",
+        dir_name: Optional[str] = None,
+        exe_root: str = "ejercicio_5",
         show_progress: bool = False,
         parallel_workers: Optional[int] = None,
     ) -> None:
@@ -145,11 +145,7 @@ class HybridGAACOR:
             return np.full(n, 1.0 / n)
         idx = np.arange(1, n + 1, dtype=float)
         # Gaussian-like weighting centered at the best (rank 1)
-        try:
-            w = (1.0 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-((idx - 1.0) ** 2) / (2.0 * (sigma ** 2)))
-        except FloatingPointError:
-            return np.full(n, 1.0 / n)
-        # Clean up any numerical issues
+        w = (1.0 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-((idx - 1.0) ** 2) / (2.0 * (sigma ** 2)))
         w = np.where(np.isfinite(w), w, 0.0)
         s = w.sum()
         return (w / s) if s > 0 else np.full(n, 1.0 / n)
