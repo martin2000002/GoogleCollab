@@ -138,11 +138,21 @@ class HybridGAACOR:
         return X[idx], F[idx]
 
     def _weights(self, n: int) -> np.ndarray:
-        sigma = self.q * n
-        idx = np.arange(1, n + 1)
-        w = (1.0 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-((idx - 1) ** 2) / (2 * (sigma ** 2)))
+        # In ACOR, q controls selection pressure. For ablation (no_pheromone) we set q=0.
+        # When q <= 0, fall back to uniform weights to avoid division by zero and to remove bias.
+        sigma = float(self.q) * float(n)
+        if not np.isfinite(sigma) or sigma <= 1e-12:
+            return np.full(n, 1.0 / n)
+        idx = np.arange(1, n + 1, dtype=float)
+        # Gaussian-like weighting centered at the best (rank 1)
+        try:
+            w = (1.0 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-((idx - 1.0) ** 2) / (2.0 * (sigma ** 2)))
+        except FloatingPointError:
+            return np.full(n, 1.0 / n)
+        # Clean up any numerical issues
+        w = np.where(np.isfinite(w), w, 0.0)
         s = w.sum()
-        return w / s if s > 0 else np.full(n, 1.0 / n)
+        return (w / s) if s > 0 else np.full(n, 1.0 / n)
 
     def _sigma_dim(self, X: np.ndarray, k: int, d: int) -> float:
         n = X.shape[0]
