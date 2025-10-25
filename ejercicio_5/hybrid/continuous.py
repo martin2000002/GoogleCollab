@@ -40,6 +40,7 @@ class HybridGAACOR:
         xi: float = 0.85,
         maximize: bool = False,
         # misc
+    seed_with_ga: bool = True,
         random_seed: Optional[int] = None,
         log: bool = False,
         dir_name: Optional[str] = None,
@@ -71,6 +72,7 @@ class HybridGAACOR:
         self.q = q
         self.xi = xi
         self.maximize = maximize
+        self.seed_with_ga = seed_with_ga
         self.random_seed = random_seed
         self.log = log
         self.dir_name = dir_name or "hybrid_acor"
@@ -106,8 +108,8 @@ class HybridGAACOR:
             log=False,
             dir_name=f"{self.dir_name}_ga_hyb",
             exe_root=self.exe_root,
-            save_plots=False,
-            show_progress=False,
+            save_plots=True,
+            show_progress=True,
         )
         elites: List[np.ndarray] = []
         _best_overall, results = ga.run_multiple(runs=self.ga_runs)
@@ -189,8 +191,13 @@ class HybridGAACOR:
 
     # --- core ---
     def _run_body(self, progress_label: Optional[str] = None) -> Tuple[np.ndarray, float, List[float], List[Tuple[np.ndarray, float]]]:
-        elites = self._ga_elites()
-        X, F = self._init_archive_seeded(elites)
+        if self.seed_with_ga:
+            elites = self._ga_elites()
+            X, F = self._init_archive_seeded(elites)
+        else:
+            # Initialize archive purely at random (no GA seeding)
+            X = np.random.uniform(self.lb, self.ub, size=(self.archive_size, self.dim))
+            F = np.array([self._evaluate(x) for x in X])
         X, F = self._sort_archive(X, F)
         best_x = X[0].copy()
         best_f = float(F[0])

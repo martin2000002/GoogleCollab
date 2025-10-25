@@ -45,10 +45,8 @@ def run_beale_ablation_all() -> None:
     )
 
     for label, mods in ((
-        'no_elite', {'ga_elite_ratio': 0.0}
-    ), (
-        'no_pheromone', {'q': 0.0}
-    )):
+        'no_elite', {'seed_with_ga': False}
+    ),):
         params = dict(beale_base)
         params.update(mods)
         params['dir_name'] = f"beale_hybrid_ablation_{label}"
@@ -96,10 +94,8 @@ def run_rastrigin_n10_ablation_all() -> None:
     )
 
     for label, mods in ((
-        'no_elite', {'ga_elite_ratio': 0.0}
-    ), (
-        'no_pheromone', {'q': 0.0}
-    )):
+        'no_elite', {'seed_with_ga': False}
+    ),):
         params = dict(ras_base)
         params.update(mods)
         params['dir_name'] = f"rastrigin_n10_hybrid_ablation_{label}"
@@ -124,10 +120,8 @@ def run_tsp_ablation_all() -> None:
 
     def _tsp_ablation(name: str, positions: List[Tuple[float, float]], seed: int, base_hp: dict):
         for label, mods in ((
-            'no_elite', {'ga_elite_ratio': 0.0}
-        ), (
-            'no_pheromone', {'q': 0.0}
-        )):
+            'no_elite', {'seed_with_ga': False}
+        ),):
             hp = dict(base_hp)
             hp.update(mods)
             hp['dir_name'] = f"tsp_{name}_hybrid_ablation_{label}"

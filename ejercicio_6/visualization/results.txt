@@ -1,0 +1,57 @@
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=2.939212e-14 at [3.000000, 0.500000] | time=1.37s
+    Summary
+    runs: 10
+    mean best: 5.628571e-13
+    mean time: 1.37s
+    std:  6.223554e-13
+Easom (ABC) best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.02s
+    Summary
+    runs: 10
+    mean best: -0.999999999899
+    mean time: 0.03s
+    std:  2.993415e-10
+
+== Traveling Salesman Problem (ABC) ==
+TSP [random_25] (ABC) best length= 385.342604816605 | time=2.28s
+    Summary
+    runs: 5
+    mean best: 387.406809113001
+    mean time: 2.27s
+    std:  4.327387447191
+TSP [grid_25] (ABC) best length= 254.142135623731 | time=0.23s
+    Summary
+    runs: 5
+    mean best: 268.568542494924
+    mean time: 0.23s
+    std:  11.403968885385
+TSP [random_100] (ABC) best length= 1136.631687006266 | time=223.96s
+    Summary
+    runs: 5
+    mean best: 1152.218042647929
+    mean time: 224.00s
+    std:  10.723062817107
+TSP [grid_100] (ABC) best length= 1238.788246973340 | time=297.51s
+    Summary
+    runs: 5
+    mean best: 1259.201879547937
+    mean time: 294.84s
+    std:  18.715807964735
+TSP [random_225] (ABC) best length= 2628.631082312866 | time=92.78s
+    Summary
+    runs: 5
+    mean best: 2788.340161312398
+    mean time: 92.48s
+    std:  93.960727053928
+TSP [grid_225] (ABC) best length= 4163.918131556185 | time=138.13s
+    Summary
+    runs: 5
+    mean best: 4342.099300818248
+    mean time: 142.20s
+    std:  135.093327654717
+TSP [random_255] (ABC) best length= 2671.392267910888 | time=335.57s
+    Summary
+    runs: 5
+    mean best: 2807.900600374602
+    mean time: 323.96s
+    std:  79.205872566705

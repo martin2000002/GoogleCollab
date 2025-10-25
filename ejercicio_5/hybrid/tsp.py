@@ -53,6 +53,7 @@ class HybridGAACO_TSP:
         rho: float = 0.5,
         q: float = 1.0,
         # misc
+        seed_with_ga: bool = True,
         random_seed: Optional[int] = None,
         log: bool = False,
         dir_name: Optional[str] = None,
@@ -80,6 +81,7 @@ class HybridGAACO_TSP:
         self.beta = beta
         self.rho = rho
         self.q = q
+        self.seed_with_ga = seed_with_ga
         self.random_seed = random_seed
         self.log = log
         self.dir_name = dir_name or "hybrid_tsp"
@@ -163,9 +165,11 @@ class HybridGAACO_TSP:
         return Ant(tour=tour, length=L)
 
     def _run_body(self, progress_label: Optional[str] = None) -> Tuple[List[int], float, List[float], List[Tuple[List[int], float]]]:
-        # GA seeding
-        elites = self._collect_elite_tours()
-        self._seed_pheromone(elites)
+        # GA seeding (optional)
+        elites: List[List[int]] = []
+        if self.seed_with_ga:
+            elites = self._collect_elite_tours()
+            self._seed_pheromone(elites)
 
         # initial best
         init = elites[0][:] if elites else list(range(self.n))
