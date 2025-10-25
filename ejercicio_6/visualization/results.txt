@@ -1,0 +1,357 @@
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=4.240832e-07 at [2.998423, 0.499642] | time=0.27s
+    Summary
+    runs: 10
+    mean best: 3.336847e-04
+    mean time: 0.32s
+    std:  2.896420e-04
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=8.541097e-06 at [2.993323, 0.498583] | time=0.51s
+    Summary
+    runs: 1
+    mean best: 8.541097e-06
+    mean time: 0.51s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=2.609458e-04 at [3.038202, 0.508089] | time=0.31s
+    Summary
+    runs: 1
+    mean best: 2.609458e-04
+    mean time: 0.31s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=5.140953e-05 at [2.984606, 0.495404] | time=0.38s
+    Summary
+    runs: 1
+    mean best: 5.140953e-05
+    mean time: 0.38s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=6.282662e-05 at [2.997914, 0.497836] | time=0.62s
+    Summary
+    runs: 1
+    mean best: 6.282662e-05
+    mean time: 0.62s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=3.302690e-06 at [2.996844, 0.499489] | time=1.41s
+    Summary
+    runs: 1
+    mean best: 3.302690e-06
+    mean time: 1.41s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=3.302690e-06 at [2.996844, 0.499489] | time=2.97s
+    Summary
+    runs: 1
+    mean best: 3.302690e-06
+    mean time: 2.97s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=2.609458e-04 at [3.038202, 0.508089] | time=5.17s
+    Summary
+    runs: 1
+    mean best: 2.609458e-04
+    mean time: 5.17s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=6.425809e-05 at [3.000302, 0.501741] | time=3.40s
+    Summary
+    runs: 1
+    mean best: 6.425809e-05
+    mean time: 3.40s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=1.398264e-05 at [3.006763, 0.501135] | time=7.40s
+    Summary
+    runs: 1
+    mean best: 1.398264e-05
+    mean time: 7.40s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=3.671306e-11 at [2.999985, 0.499996] | time=6.37s
+    Summary
+    runs: 1
+    mean best: 3.671306e-11
+    mean time: 6.37s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=2.057171e-10 at [2.999964, 0.499991] | time=6.41s
+    Summary
+    runs: 1
+    mean best: 2.057171e-10
+    mean time: 6.41s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=8.362707e-07 at [3.002285, 0.500577] | time=11.38s
+    Summary
+    runs: 1
+    mean best: 8.362707e-07
+    mean time: 11.38s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=1.800156e-11 at [2.999989, 0.499997] | time=2.87s
+    Summary
+    runs: 1
+    mean best: 1.800156e-11
+    mean time: 2.87s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=4.388306e-10 at [2.999950, 0.499986] | time=2.45s
+    Summary
+    runs: 1
+    mean best: 4.388306e-10
+    mean time: 2.45s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=3.223826e-11 at [2.999986, 0.499996] | time=2.80s
+    Summary
+    runs: 1
+    mean best: 3.223826e-11
+    mean time: 2.80s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=1.776343e-17 at [3.000000, 0.500000] | time=5.00s
+    Summary
+    runs: 1
+    mean best: 1.776343e-17
+    mean time: 5.00s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=4.829797e-19 at [3.000000, 0.500000] | time=10.65s
+    Summary
+    runs: 1
+    mean best: 4.829797e-19
+    mean time: 10.65s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=4.290509e-16 at [3.000000, 0.500000] | time=11.41s
+    Summary
+    runs: 1
+    mean best: 4.290509e-16
+    mean time: 11.41s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=4.829797e-19 at [3.000000, 0.500000] | time=19.73s
+    Summary
+    runs: 1
+    mean best: 4.829797e-19
+    mean time: 19.73s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=1.085435e-10 at [2.999974, 0.499994] | time=3.39s
+    Summary
+    runs: 1
+    mean best: 1.085435e-10
+    mean time: 3.39s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Beale (ABC) best f(x,y)=8.878687e-14 at [2.999999, 0.500000] | time=6.78s
+    Summary
+    runs: 1
+    mean best: 8.878687e-14
+    mean time: 6.78s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.15s
+    Summary
+    runs: 10
+    mean best: -1.000000000000
+    mean time: 0.25s
+    std:  3.470644e-13
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.19s
+    Summary
+    runs: 1
+    mean best: -1.000000000000
+    mean time: 0.19s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.25s
+    Summary
+    runs: 1
+    mean best: -1.000000000000
+    mean time: 0.25s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.11s
+    Summary
+    runs: 1
+    mean best: -1.000000000000
+    mean time: 0.11s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-0.999999999996 at [3.141593, 3.141594] | time=0.12s
+    Summary
+    runs: 1
+    mean best: -0.999999999996
+    mean time: 0.12s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.09s
+    Summary
+    runs: 1
+    mean best: -1.000000000000
+    mean time: 0.09s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-0.999999999891 at [3.141591, 3.141584] | time=0.08s
+    Summary
+    runs: 1
+    mean best: -0.999999999891
+    mean time: 0.08s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-0.999999926876 at [3.141762, 3.141451] | time=0.12s
+    Summary
+    runs: 1
+    mean best: -0.999999926876
+    mean time: 0.12s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.14s
+    Summary
+    runs: 1
+    mean best: -1.000000000000
+    mean time: 0.14s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.52s
+    Summary
+    runs: 1
+    mean best: -1.000000000000
+    mean time: 0.52s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-0.999999999890 at [3.141592, 3.141601] | time=0.11s
+    Summary
+    runs: 1
+    mean best: -0.999999999890
+    mean time: 0.11s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-0.999999999779 at [3.141592, 3.141581] | time=0.14s
+    Summary
+    runs: 1
+    mean best: -0.999999999779
+    mean time: 0.14s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+Easom (ABC) best f(x,y)=-1.000000000000 at [3.141593, 3.141593] | time=0.12s
+    Summary
+    runs: 1
+    mean best: -1.000000000000
+    mean time: 0.12s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 419.180040084992 | time=19.64s
+    Summary
+    runs: 5
+    mean best: 456.115718876135
+    mean time: 5.89s
+    std:  29.301182741422
+TSP [grid_25] (ABC) best length= 274.787086646191 | time=1.34s
+    Summary
+    runs: 5
+    mean best: 283.151078224244
+    mean time: 1.19s
+    std:  6.515130392963
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 408.857045395817 | time=3.59s
+    Summary
+    runs: 5
+    mean best: 421.807849797733
+    mean time: 3.13s
+    std:  9.634939721994
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 406.155806041702 | time=3.60s
+    Summary
+    runs: 1
+    mean best: 406.155806041702
+    mean time: 3.60s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 538.028759322539 | time=3.18s
+    Summary
+    runs: 1
+    mean best: 538.028759322539
+    mean time: 3.18s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 402.284169655765 | time=3.05s
+    Summary
+    runs: 1
+    mean best: 402.284169655765
+    mean time: 3.05s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 385.342604816606 | time=6.73s
+    Summary
+    runs: 1
+    mean best: 385.342604816606
+    mean time: 6.73s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [grid_25] (ABC) best length= 254.142135623731 | time=13.17s
+    Summary
+    runs: 1
+    mean best: 254.142135623731
+    mean time: 13.17s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [grid_25] (ABC) best length= 254.142135623731 | time=9.01s
+    Summary
+    runs: 1
+    mean best: 254.142135623731
+    mean time: 9.01s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [grid_25] (ABC) best length= 254.142135623731 | time=0.75s
+    Summary
+    runs: 1
+    mean best: 254.142135623731
+    mean time: 0.75s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 426.303199401574 | time=1.25s
+    Summary
+    runs: 1
+    mean best: 426.303199401574
+    mean time: 1.25s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 395.137124790590 | time=7.99s
+    Summary
+    runs: 1
+    mean best: 395.137124790590
+    mean time: 7.99s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 395.014380599020 | time=6.77s
+    Summary
+    runs: 1
+    mean best: 395.014380599020
+    mean time: 6.77s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_25] (ABC) best length= 385.342604816606 | time=8.12s
+    Summary
+    runs: 1
+    mean best: 385.342604816606
+    mean time: 8.12s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_100] (ABC) best length= 1477.407767917257 | time=47.94s
+    Summary
+    runs: 1
+    mean best: 1477.407767917257
+    mean time: 47.94s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==
+TSP [random_100] (ABC) best length= 1182.012505045438 | time=144.98s
+    Summary
+    runs: 1
+    mean best: 1182.012505045438
+    mean time: 144.98s
+    std:  0.000000000000
+== Continuous optimization (ABC) ==

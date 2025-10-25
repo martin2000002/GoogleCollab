@@ -121,9 +121,6 @@ def run_tsp_ablation_all() -> None:
     Follows the structure used by executions/no_ablation.py: for each dataset
     prints a sub-header and logs best and summary.
     """
-    header = "\n== TSP 25/100/225 (GA, ACO, PSO-swap) =="
-    print(header)
-    append_results('ejercicio_5', header)
 
     def _tsp_ablation(name: str, positions: List[Tuple[float, float]], seed: int, base_hp: dict):
         for label, mods in ((
