@@ -28,7 +28,7 @@ def run_beale():
         problem=problem,
         population_size=80,
         mutation_prob=0.2,
-        elite_ratio=0.20,
+        elite_ratio=0.2,
         max_generations=175,
         selection=TournamentSelection(k=3),
         maximize=False,
@@ -139,9 +139,9 @@ if __name__ == "__main__":
     print(header)
     append_results('ejercicio_1', header)
     run_beale()
-    # run_easom()
+    run_easom()
 
-    # header = "\n== Traveling Salesman Problem =="
-    # print(header)
-    # append_results('ejercicio_1', header)
-    # run_tsp()
+    header = "\n== Traveling Salesman Problem =="
+    print(header)
+    append_results('ejercicio_1', header)
+    run_tsp()
