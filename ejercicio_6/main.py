@@ -114,7 +114,7 @@ def run_tsp():
 
     n = 100
     positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=1000, max_epochs=1200, limit=500, seed=n)
+    _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=8000, max_epochs=1000, limit=1000, seed=n)
 
     # positions_grid = make_grid_positions(n, spacing=10)
     # _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=800, max_epochs=1200, limit=120, seed=n)

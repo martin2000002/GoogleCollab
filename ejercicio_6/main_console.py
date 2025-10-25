@@ -114,11 +114,11 @@ def run_tsp(colony_size: int = 1000, max_epochs: int = 1200, limit: int = 500):
     # _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=200, max_epochs=100, limit=100, seed=n)
 
     n = 100
-    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=colony_size, max_epochs=max_epochs, limit=limit, seed=n)
+    # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    # _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=colony_size, max_epochs=max_epochs, limit=limit, seed=n)
 
-    # positions_grid = make_grid_positions(n, spacing=10)
-    # _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=800, max_epochs=1200, limit=120, seed=n)
+    positions_grid = make_grid_positions(n, spacing=10)
+    _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=colony_size, max_epochs=max_epochs, limit=limit, seed=n)
 
     # n = 225
     # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
