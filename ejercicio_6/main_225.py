@@ -9,7 +9,6 @@ if str(_PARENT) not in sys.path:
     sys.path.insert(0, str(_PARENT))
 
 from typing import List, Tuple
-import argparse
 
 from abc_c.core import ArtificialBeeColony
 from problems.continuous import ABCContinuousProblem, beale_function, easom_function
@@ -61,13 +60,13 @@ def run_easom():
         max_epochs=100,
         limit=20,
         maximize=False,
-        random_seed=1,
+        random_seed=2,
         log=True,
         dir_name="easom",
         exe_root="ejercicio_6",
         show_progress=True,
     )
-    best_overall, results = abc.run_multiple(runs=1)
+    best_overall, results = abc.run_multiple(runs=10)
     bx, bf, bf_str, _hist, _seed, run_time = best_overall
     line = f"Easom (ABC) best f(x,y)={bf_str} at {fmt_vec(bx)} | time={run_time:.2f}s"
     print(line)
@@ -93,7 +92,7 @@ def _run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], colo
         show_progress=True,
         parallel_workers=4,
     )
-    best_overall, results = abc.run_multiple(runs=1)
+    best_overall, results = abc.run_multiple(runs=5)
     best_tour, best_len, best_len_str, _hist, _seed, run_time = best_overall
     line = f"TSP [{name}] (ABC) best length= {best_len_str} | time={run_time:.2f}s"
     print(line)
@@ -105,44 +104,43 @@ def _run_tsp_for_positions(name: str, positions: List[Tuple[float, float]], colo
     export_tsp_graph(positions, best_tour, f"{name}.graphml", annotate_indices=True, min_visual_distance=100 if name.startswith("grid_") else 30, export_root='ejercicio_6', dir_name=f"tsp_{name}")
 
 
-def run_tsp(colony_size: int = 1000, max_epochs: int = 1200, limit: int = 500):
+def run_tsp():
     # n = 25
     # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    # _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=colony_size, max_epochs=max_epochs, limit=limit, seed=n)
+    # _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=200, max_epochs=1000, limit=150, seed=n)
 
     # positions_grid = make_grid_positions(n, spacing=10)
     # _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=200, max_epochs=100, limit=100, seed=n)
 
-    n = 100
+    # n = 100
     # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    # _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=colony_size, max_epochs=max_epochs, limit=limit, seed=n)
-
-    positions_grid = make_grid_positions(n, spacing=10)
-    _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=colony_size, max_epochs=max_epochs, limit=limit, seed=n)
-
-    # n = 225
-    # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    # _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=1200, max_epochs=2000, limit=200, seed=n)
+    # _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=1800, max_epochs=1800, limit=450, seed=n)
 
     # positions_grid = make_grid_positions(n, spacing=10)
-    # _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=1500, max_epochs=2200, limit=220, seed=n)
+    # _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=2000, max_epochs=2000, limit=400, seed=n)
 
+    n = 225
+    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=1200, max_epochs=2000, limit=200, seed=n)
+
+    positions_grid = make_grid_positions(n, spacing=10)
+    _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=1500, max_epochs=2200, limit=220, seed=n)
+
+    n = 255
+    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=2000, max_epochs=3000, limit=350, seed=n)
+
+    positions_grid = make_grid_positions(n, spacing=10)
+    _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=2400, max_epochs=3200, limit=300, seed=n)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run ABC experiments from console.")
-    parser.add_argument("--colony-size", type=int, default=1000, help="Number of employed/onlooker bees (population size)")
-    parser.add_argument("--max-epochs", type=int, default=1200, help="Number of optimization epochs")
-    parser.add_argument("--limit", type=int, default=500, help="ABC scout limit (trials before reinitialization)")
-
-    args = parser.parse_args()
-
-    header = "== Continuous optimization (ABC) =="
-    print(header)
-    append_results('ejercicio_6', header)
+    # header = "== Continuous optimization (ABC) =="
+    # print(header)
+    # append_results('ejercicio_6', header)
     # run_beale()
     # run_easom()
 
-    # header = "\n== Traveling Salesman Problem (ABC) =="
-    # print(header)
-    # append_results('ejercicio_6', header)
-    run_tsp(colony_size=args.colony_size, max_epochs=args.max_epochs, limit=args.limit)
+    header = "\n== Traveling Salesman Problem (ABC) =="
+    print(header)
+    append_results('ejercicio_6', header)
+    run_tsp()

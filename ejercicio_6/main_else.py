@@ -60,7 +60,7 @@ def run_easom():
         max_epochs=100,
         limit=20,
         maximize=False,
-        random_seed=1,
+        random_seed=2,
         log=True,
         dir_name="easom",
         exe_root="ejercicio_6",
@@ -119,19 +119,19 @@ def run_tsp():
     positions_grid = make_grid_positions(n, spacing=10)
     _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=2000, max_epochs=2000, limit=400, seed=n)
 
-    n = 225
-    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=1200, max_epochs=2000, limit=200, seed=n)
+    # n = 225
+    # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    # _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=1200, max_epochs=2000, limit=200, seed=n)
 
-    positions_grid = make_grid_positions(n, spacing=10)
-    _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=1500, max_epochs=2200, limit=220, seed=n)
+    # positions_grid = make_grid_positions(n, spacing=10)
+    # _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=1500, max_epochs=2200, limit=220, seed=n)
 
-    n = 255
-    positions_rand = make_random_positions(n, width=100, height=100, seed=n)
-    _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=2000, max_epochs=3000, limit=350, seed=n)
+    # n = 255
+    # positions_rand = make_random_positions(n, width=100, height=100, seed=n)
+    # _run_tsp_for_positions(f"random_{n}", positions_rand, colony_size=2000, max_epochs=3000, limit=350, seed=n)
 
-    positions_grid = make_grid_positions(n, spacing=10)
-    _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=2400, max_epochs=3200, limit=300, seed=n)
+    # positions_grid = make_grid_positions(n, spacing=10)
+    # _run_tsp_for_positions(f"grid_{n}", positions_grid, colony_size=2400, max_epochs=3200, limit=300, seed=n)
 
 if __name__ == "__main__":
     header = "== Continuous optimization (ABC) =="
